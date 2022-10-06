@@ -4,16 +4,10 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.java.eo.Se;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
-import org.hamcrest.Matcher;
-import org.hamcrest.Matchers;
 import starter.API.TodoistAPI;
-import starter.ResponseBody.TodoistResponse;
-
 import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.hasItem;
 
 public class GetAllProjectsStepDef {
     @Steps
@@ -33,11 +27,6 @@ public class GetAllProjectsStepDef {
         SerenityRest.then().statusCode(ok);
     }
 
-    @And("Body contain id {int} and color {int}")
-    public void bodyContainIdAndColor(int id, int color) {
-        SerenityRest.then().body("id",Matchers.hasKey(id))
-                .body("color", Matchers.hasKey(color));
-    }
 //Scenario2
     @Given("Get all projects with valid path {string} empty authorization")
     public void getAllProjectsEmptyAuthorization(String path) {
@@ -77,6 +66,4 @@ public class GetAllProjectsStepDef {
     public void getAllProjectsInvalidPathWithValueInteger(int path) {
         todoistAPI.getAllProjectsInvalidPathInteger(path);
     }
-
-
 }
