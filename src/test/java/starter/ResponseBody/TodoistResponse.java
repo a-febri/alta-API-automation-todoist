@@ -6,3 +6,4 @@ public class TodoistResponse {
     public static String COLOR_ALL_PROJECTS= "[0]color";
     // udah nyoba tapi belum juga berhasil
 }
+

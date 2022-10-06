@@ -24,3 +24,4 @@ public class TodoistAPI {
         SerenityRest.given().pathParam("path", path);
     }
 }
+
