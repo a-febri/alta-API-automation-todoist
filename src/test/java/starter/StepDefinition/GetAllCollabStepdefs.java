@@ -34,9 +34,4 @@ public class GetAllCollabStepdefs {
                 .baseUri(url)
                 .headers("Authorization", "Bearer d256eb8544ab45ff968db31541e1f058ce0ce5d6");
     }
-
-    @Then("Should return {int} OK")
-    public void shouldReturnOK(int ok) {
-        SerenityRest.then().statusCode(ok);
-    }
 }

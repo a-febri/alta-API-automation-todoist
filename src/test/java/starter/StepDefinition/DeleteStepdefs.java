@@ -37,11 +37,6 @@ public class DeleteStepdefs {
         todoistAPI.deleteProjectUnauthorized(id);
     }
 
-    @Then("Should return {int} Unauthorized")
-    public void shouldReturnUnauthorized(int Unauthorized) {
-        SerenityRest.then().statusCode(Unauthorized);
-    }
-
     @And("Response body should contain message {string}")
     public void responseBodyShouldContainMessage(String message) {
         SerenityRest.then().body(equalTo(message));

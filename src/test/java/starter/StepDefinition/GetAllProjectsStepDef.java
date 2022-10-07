@@ -22,20 +22,10 @@ public class GetAllProjectsStepDef {
         SerenityRest.when().get(TodoistAPI.GET_ALL_PROJECTS);
     }
 
-    @Then("Should return {int} OK")
-    public void shouldReturnOK(int ok) {
-        SerenityRest.then().statusCode(ok);
-    }
-
 //Scenario2
     @Given("Get all projects with valid path {string} empty authorization")
     public void getAllProjectsEmptyAuthorization(String path) {
        todoistAPI.getAllProjectsWithoutAuthorization(path);
-    }
-
-    @Then("Should return {int} Unauthorized")
-    public void shouldReturnUnauthorized(int unauthorized) {
-        SerenityRest.then().statusCode(unauthorized);
     }
 
     @And("Body contain {string}")
